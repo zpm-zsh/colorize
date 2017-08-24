@@ -25,100 +25,100 @@ _pygmentize_theme(){
 precmd_functions+=( _pygmentize_theme )
 
 if (( $+commands[grc] )); then
-  
-  df(){
-    \grc --colour=auto $(whence df) "$@"
+
+  function df(){
+    =grc --colour=auto $(whence df) "$@"
   }
 
-  as(){
-    \grc --colour=auto $(whence as) "$@"
+  function as(){
+    =grc --colour=auto $(whence as) "$@"
   }
-  
-  diff(){
-    \grc --colour=auto $(whence diff) "$@"
+
+  function diff(){
+    =grc --colour=auto $(whence diff) "$@"
   }
-  
+
   if (( $+commands[dig] )); then
-    dig(){
-      \grc --colour=auto $(whence dig) "$@"
+    function dig(){
+      =grc --colour=auto $(whence dig) "$@"
     }
   fi
-  
+
   if (( $+commands[gas] )); then
-    gas(){
-      \grc --colour=auto $(whence gas) "$@"
+    function gas(){
+      =grc --colour=auto $(whence gas) "$@"
     }
   fi
-  
+
   if (( $+commands[gcc] )); then
-    gcc(){
-      \grc --colour=auto $(whence gcc) "$@"
+    function gcc(){
+      =grc --colour=auto $(whence gcc) "$@"
     }
   fi
-  
+
   if (( $+commands[g++] )); then
     function g++(){
-      \grc --colour=auto $(whence g++) "$@"
+      =grc --colour=auto $(whence g++) "$@"
     }
   fi
-  
+
   if (( $+commands[last] )); then
-    last(){
-      \grc --colour=auto $(whence last) "$@"
+    function last(){
+      =grc --colour=auto $(whence last) "$@"
     }
   fi
-  
+
   if (( $+commands[ld] )); then
-    ld(){
-      \grc --colour=auto $(whence ld) "$@"
+    function ld(){
+      =grc --colour=auto $(whence ld) "$@"
     }
   fi
-  
+
   if (( $+commands[ifconfig] )); then
-    ifconfig(){
-      \grc --colour=auto $(whence ifconfig) "$@"
+    function ifconfig(){
+      =grc --colour=auto $(whence ifconfig) "$@"
     }
   fi
-  
+
   if (( $+commands[mount] )); then
-    mount(){
-      \grc --colour=auto $(whence mount) "$@"
+    function mount(){
+      =grc --colour=auto $(whence mount) "$@"
     }
   fi
 
   if (( $+commands[mtr] )); then
-    mtr(){
-      \grc --colour=auto $(whence mtr) "$@"
+    function mtr(){
+      =grc --colour=auto $(whence mtr) "$@"
     }
   fi
 
   if (( $+commands[netstat] )); then
-    netstat(){
-      \grc --colour=auto $(whence netstat) "$@"
+    function netstat(){
+      =grc --colour=auto $(whence netstat) "$@"
     }
   fi
 
   if (( $+commands[ping] )); then
-    ping(){
-      \grc --colour=auto $(whence ping) "$@"
+    function ping(){
+      =grc --colour=auto $(whence ping) "$@"
     }
   fi
 
   if (( $+commands[ping6] )); then
-    ping6(){
-      \grc --colour=auto $(whence ping6) "$@"
+    function ping6(){
+      =grc --colour=auto $(whence ping6) "$@"
     }
   fi
-    
+
   if (( $+commands[ps] )); then
-    ps(){
-      \grc --colour=auto $(whence ps) "$@"
+    function ps(){
+      =grc --colour=auto $(whence ps) "$@"
     }
   fi
-    
+
   if (( $+commands[traceroute] )); then
-    traceroute(){
-      \grc --colour=auto $(whence traceroute) "$@"
+    function traceroute(){
+      =grc --colour=auto $(whence traceroute) "$@"
     }
   fi
 
