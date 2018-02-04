@@ -1,9 +1,0 @@
-#compdef - df as diff dig gas gcc g++ last ld ifconfig mount mtr netstat ping ping6 ps traceroute
-
-# precommands is made local in _main_complete
-precommands+=($words[1])
-
-shift words
-(( CURRENT-- ))
-
-_normal

@@ -26,66 +26,100 @@ precmd_functions+=( _pygmentize_theme )
 
 if (( $+commands[grc] )); then
 
-  alias df="$(whence grc) --colour=auto $(whence df)"
+  function df(){
+    =grc --colour=auto $(whence df) "$@"
+  }
 
-  alias as="$(whence grc) --colour=auto $(whence as)"
+  function as(){
+    =grc --colour=auto $(whence as) "$@"
+  }
 
-  alias diff="$(whence grc) --colour=auto $(whence diff)"
+  function diff(){
+    =grc --colour=auto $(whence diff) "$@"
+  }
 
   if (( $+commands[dig] )); then
-    alias dig="$(whence grc) --colour=auto $(whence dig)"
+    function dig(){
+      =grc --colour=auto $(whence dig) "$@"
+    }
   fi
 
   if (( $+commands[gas] )); then
-    alias gas="$(whence grc) --colour=auto $(whence gas)"
+    function gas(){
+      =grc --colour=auto $(whence gas) "$@"
+    }
   fi
 
   if (( $+commands[gcc] )); then
-    alias gcc="$(whence grc) --colour=auto $(whence gcc)"
+    function gcc(){
+      =grc --colour=auto $(whence gcc) "$@"
+    }
   fi
 
   if (( $+commands[g++] )); then
-    alias g++="$(whence grc) --colour=auto $(whence g++)"
+    function g++(){
+      =grc --colour=auto $(whence g++) "$@"
+    }
   fi
 
   if (( $+commands[last] )); then
-    alias last="$(whence grc) --colour=auto $(whence last)"
+    function last(){
+      =grc --colour=auto $(whence last) "$@"
+    }
   fi
 
   if (( $+commands[ld] )); then
-    alias ld="$(whence grc) --colour=auto $(whence ld)"
+    function ld(){
+      =grc --colour=auto $(whence ld) "$@"
+    }
   fi
 
   if (( $+commands[ifconfig] )); then
-    alias ifconfig="$(whence grc) --colour=auto $(whence ifconfig)"
+    function ifconfig(){
+      =grc --colour=auto $(whence ifconfig) "$@"
+    }
   fi
 
   if (( $+commands[mount] )); then
-    alias mount="$(whence grc) --colour=auto $(whence mount)"
+    function mount(){
+      =grc --colour=auto $(whence mount) "$@"
+    }
   fi
 
   if (( $+commands[mtr] )); then
-    alias mtr="$(whence grc) --colour=auto $(whence mtr)"
+    function mtr(){
+      =grc --colour=auto $(whence mtr) "$@"
+    }
   fi
 
   if (( $+commands[netstat] )); then
-    alias netstat="$(whence grc) --colour=auto $(whence netstat)"
+    function netstat(){
+      =grc --colour=auto $(whence netstat) "$@"
+    }
   fi
 
   if (( $+commands[ping] )); then
-    alias ping="$(whence grc) --colour=auto $(whence ping)"
+    function ping(){
+      =grc --colour=auto $(whence ping) "$@"
+    }
   fi
 
   if (( $+commands[ping6] )); then
-    alias ping6="$(whence grc) --colour=auto $(whence ping6)"
+    function ping6(){
+      =grc --colour=auto $(whence ping6) "$@"
+    }
   fi
 
   if (( $+commands[ps] )); then
-    alias ps="$(whence grc) --colour=auto $(whence ps)"
+    function ps(){
+      =grc --colour=auto $(whence ps) "$@"
+    }
   fi
 
   if (( $+commands[traceroute] )); then
-    alias traceroute="$(whence grc) --colour=auto $(whence traceroute)"
+    function traceroute(){
+      =grc --colour=auto $(whence traceroute) "$@"
+    }
   fi
 
 fi
