@@ -27,7 +27,7 @@ precmd_functions+=( _pygmentize_theme )
 if (( $+commands[grc] )); then
 
   function df(){
-    =grc --colour=auto $(whence df) "$@"
+    =grc --colour=auto $(whence df) -h "$@"
   }
 
   function as(){
@@ -35,7 +35,7 @@ if (( $+commands[grc] )); then
   }
 
   function diff(){
-    =grc --colour=auto $(whence diff) "$@"
+    =grc --colour=auto $(whence diff) --color "$@"
   }
 
   if (( $+commands[dig] )); then
