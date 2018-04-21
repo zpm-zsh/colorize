@@ -43,6 +43,10 @@ if (( $+commands[grc] )); then
     =grc --colour=auto df -h "$@"
   }
 
+  function free(){
+    =grc --colour=auto free -h "$@"
+  }
+
   function as(){
     =grc --colour=auto as "$@"
   }
