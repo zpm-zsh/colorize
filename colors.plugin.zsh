@@ -14,17 +14,16 @@ export LESS='-R -M'
 
 PYGMENTIZE_THEME=${PYGMENTIZE_THEME:-"monokai"}
 
-
 function grep(){
-  $(whence grep) --colour=auto "$@"
+  =grep --colour=auto "$@"
 }
 
 function egrep(){
-  $(whence grep) --colour=auto "$@"
+  =egrep --colour=auto "$@"
 }
 
 function fgrep(){
-  $(whence grep) --colour=auto "$@"
+  =fgrep --colour=auto "$@"
 }
 
 _pygmentize_theme(){
@@ -40,98 +39,98 @@ precmd_functions+=( _pygmentize_theme )
 if (( $+commands[grc] )); then
 
   function df(){
-    =grc --colour=auto $(whence df) -h "$@"
+    =grc --colour=auto df -h "$@"
   }
 
   function as(){
-    =grc --colour=auto $(whence as) "$@"
+    =grc --colour=auto as "$@"
   }
 
   function diff(){
-    =grc --colour=auto $(whence diff) --color "$@"
+    =grc --colour=auto diff --color "$@"
   }
 
   if (( $+commands[dig] )); then
     function dig(){
-      =grc --colour=auto $(whence dig) "$@"
+      =grc --colour=auto dig "$@"
     }
   fi
 
   if (( $+commands[gas] )); then
     function gas(){
-      =grc --colour=auto $(whence gas) "$@"
+      =grc --colour=auto gas "$@"
     }
   fi
 
   if (( $+commands[gcc] )); then
     function gcc(){
-      =grc --colour=auto $(whence gcc) "$@"
+      =grc --colour=auto gcc "$@"
     }
   fi
 
   if (( $+commands[g++] )); then
     function g++(){
-      =grc --colour=auto $(whence g++) "$@"
+      =grc --colour=auto g++ "$@"
     }
   fi
 
   if (( $+commands[last] )); then
     function last(){
-      =grc --colour=auto $(whence last) "$@"
+      =grc --colour=auto last "$@"
     }
   fi
 
   if (( $+commands[ld] )); then
     function ld(){
-      =grc --colour=auto $(whence ld) "$@"
+      =grc --colour=auto ld "$@"
     }
   fi
 
   if (( $+commands[ifconfig] )); then
     function ifconfig(){
-      =grc --colour=auto $(whence ifconfig) "$@"
+      =grc --colour=auto ifconfig "$@"
     }
   fi
 
   if (( $+commands[mount] )); then
     function mount(){
-      =grc --colour=auto $(whence mount) "$@"
+      =grc --colour=auto mount "$@"
     }
   fi
 
   if (( $+commands[mtr] )); then
     function mtr(){
-      =grc --colour=auto $(whence mtr) "$@"
+      =grc --colour=auto mtr "$@"
     }
   fi
 
   if (( $+commands[netstat] )); then
     function netstat(){
-      =grc --colour=auto $(whence netstat) "$@"
+      =grc --colour=auto netstat "$@"
     }
   fi
 
   if (( $+commands[ping] )); then
     function ping(){
-      =grc --colour=auto $(whence ping) "$@"
+      =grc --colour=auto ping "$@"
     }
   fi
 
   if (( $+commands[ping6] )); then
     function ping6(){
-      =grc --colour=auto $(whence ping6) "$@"
+      =grc --colour=auto ping6 "$@"
     }
   fi
 
   if (( $+commands[ps] )); then
     function ps(){
-      =grc --colour=auto $(whence ps) "$@"
+      =grc --colour=auto ps "$@"
     }
   fi
 
   if (( $+commands[traceroute] )); then
     function traceroute(){
-      =grc --colour=auto $(whence traceroute) "$@"
+      =grc --colour=auto traceroute "$@"
     }
   fi
 
