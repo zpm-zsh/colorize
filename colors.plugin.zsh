@@ -14,6 +14,19 @@ export LESS='-R -M'
 
 PYGMENTIZE_THEME=${PYGMENTIZE_THEME:-"monokai"}
 
+
+function grep(){
+  $(whence grep) --colour=auto "$@"
+}
+
+function egrep(){
+  $(whence grep) --colour=auto "$@"
+}
+
+function fgrep(){
+  $(whence grep) --colour=auto "$@"
+}
+
 _pygmentize_theme(){
   if (( $+commands[pygmentize] )); then
     export LESSOPEN="|pygmentize -f 256 -O style=$PYGMENTIZE_THEME -g %s"
