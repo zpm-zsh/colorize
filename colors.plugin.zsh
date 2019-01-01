@@ -29,8 +29,8 @@ function fgrep(){
 
 _pygmentize_theme(){
   if (( $+commands[pygmentize] )); then
-    export LESSOPEN="|pygmentize -f 256 -O style=$PYGMENTIZE_THEME -g %s"
-    alias pygmentize="pygmentize -O style=$PYGMENTIZE_THEME"
+    export LESSOPEN="|pygmentize -O style=$PYGMENTIZE_THEME -f console16m -g %s"
+    alias pygmentize="pygmentize -O style=$PYGMENTIZE_THEME -f console16m -g"
   fi
   precmd_functions=(${precmd_functions#_pygmentize_theme})
 }
