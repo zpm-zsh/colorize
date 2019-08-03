@@ -48,12 +48,12 @@ cat << EOF
  ${redf_light}▀ ▀▄▄ ▄▄▀ ▀${reset}   ${greenf_light}▄▄▀▀ ▀▀ ▀▀▄▄${reset}   ${yellowf_light}▄▀▄▀▀▄▀▄${reset}   ${bluef_light}▀ ▀▄▄ ▄▄▀ ▀${reset}   ${purplef_light}▄▄▀▀ ▀▀ ▀▀▄▄${reset}   ${cyanf_light}▄▀▄▀▀▄▀▄${reset}
 
 
-                                   ${whitef}▌${reset}
+                                        ${whitef}▌${reset}
 
-                                   ${whitef}▌${reset}
+                                        ${whitef}▌${reset}
 
-                                  ${whitef}▄█▄${reset}
-                              ${whitef}▄█████████▄${reset}
-                              ${whitef}▀▀▀▀▀▀▀▀▀▀▀${reset}
+                                       ${whitef}▄█▄${reset}
+                                   ${whitef}▄█████████▄${reset}
+                                   ${whitef}▀▀▀▀▀▀▀▀▀▀▀${reset}
 
 EOF
