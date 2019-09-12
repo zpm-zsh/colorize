@@ -39,8 +39,16 @@ precmd_functions+=( _pygmentize_theme )
 
 if (( $+commands[grc] )); then
 
+  function env(){
+    =grc --colour=auto env -h "$@"
+  }
+
   function df(){
     =grc --colour=auto df -h "$@"
+  }
+
+  function du(){
+    =grc --colour=auto du -h "$@"
   }
 
   function free(){
