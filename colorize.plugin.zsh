@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
 export GREP_COLOR='4;31'
-export PAGER=${PAGER:-"less"}
-
 export LESS_TERMCAP_mb=$'\E[00;32m'
 export LESS_TERMCAP_md=$'\E[00;34m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -12,8 +10,6 @@ export LESS_TERMCAP_us=$'\E[00;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS='-R -M'
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
-PYGMENTIZE_THEME=${PYGMENTIZE_THEME:-"monokai"}
 
 function grep(){
   =grep --colour=auto "$@"
@@ -27,18 +23,7 @@ function fgrep(){
   =fgrep --colour=auto "$@"
 }
 
-_pygmentize_theme(){
-  if (( $+commands[pygmentize] )); then
-    export LESSOPEN="|pygmentize -O style=$PYGMENTIZE_THEME -f console16m -g %s"
-    alias pygmentize="pygmentize -O style=$PYGMENTIZE_THEME -f console16m -g"
-  fi
-  precmd_functions=(${precmd_functions#_pygmentize_theme})
-}
-
-precmd_functions+=( _pygmentize_theme )
-
 if (( $+commands[grc] )); then
-
   function env(){
     =grc --colour=auto env -h "$@"
   }
@@ -146,5 +131,4 @@ if (( $+commands[grc] )); then
       =grc --colour=auto traceroute "$@"
     }
   fi
-
 fi
