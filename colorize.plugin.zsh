@@ -25,7 +25,7 @@ function fgrep(){
 
 if (( $+commands[grc] )); then
   function env(){
-    =grc --colour=auto env -h "$@"
+    =grc --colour=auto env "$@"
   }
 
   function df(){
