@@ -28,8 +28,12 @@ if (( $+commands[grc] )); then
     =grc --colour=auto env "$@"
   }
 
+  function lsblk(){
+    =grc --colour=auto lsblk "$@"
+  }
+
   function df(){
-    =grc --colour=auto df -h "$@"
+    =grc --colour=auto df -h "$@" 
   }
 
   function du(){
