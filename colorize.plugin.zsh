@@ -12,13 +12,13 @@ DEPENDENCES_ARCH+=( grc )
 DEPENDENCES_DEBIAN+=( grc )
 
 export GREP_COLOR='4;31'
-export LESS_TERMCAP_mb=$'\E[00;32m'
-export LESS_TERMCAP_md=$'\E[00;34m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[00;33m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[00;32m'
-export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_mb='[00;32m'
+export LESS_TERMCAP_md='[00;34m'
+export LESS_TERMCAP_me='[0m'
+export LESS_TERMCAP_so='[00;33m'
+export LESS_TERMCAP_se='[0m'
+export LESS_TERMCAP_us='[00;32m'
+export LESS_TERMCAP_ue='[0m'
 export LESS='-R -M'
 
 function grep() {
