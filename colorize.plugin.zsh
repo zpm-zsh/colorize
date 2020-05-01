@@ -11,18 +11,7 @@ if [[ $PMSPEC != *b* ]] {
 DEPENDENCES_ARCH+=( grc )
 DEPENDENCES_DEBIAN+=( grc )
 
-export GREP_COLOR='4;31'
-
 export LESS='-R -M'
-
-export LESS_TERMCAP_mb="${c[green]}"
-export LESS_TERMCAP_md="${c[bold]}${c[blue]}${c[bg_black]}"
-export LESS_TERMCAP_so="${c[bold]}${c[bg_yellow]}${c[black]}"
-export LESS_TERMCAP_us="${c[green]}"
-
-export LESS_TERMCAP_ue="${c[reset]}"
-export LESS_TERMCAP_me="${c[reset]}"
-export LESS_TERMCAP_se="${c[reset]}"
 
 function grep() {
   command grep --colour=auto "$@"
