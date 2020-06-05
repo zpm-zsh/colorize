@@ -13,6 +13,10 @@ DEPENDENCES_DEBIAN+=( grc )
 
 export LESS='-R -M'
 
+function ip() {
+  command ip --color=auto "$@"
+}
+
 function grep() {
   command grep --colour=auto "$@"
 }
@@ -24,6 +28,20 @@ function egrep() {
 function fgrep() {
   command fgrep --colour=auto "$@"
 }
+
+if (( $+commands[diff-so-fancy] )); then
+  function diff() {
+    command diff "$@" | diff-so-fancy
+  }
+elif  (( $+commands[delta] )); then
+  function diff() {
+    command diff "$@" | delta
+  }
+else
+  function diff() {
+    command diff --color "$@"
+  }
+fi
 
 if (( $+commands[grc] )); then
   function env() {
@@ -48,10 +66,6 @@ if (( $+commands[grc] )); then
 
   function as() {
     command grc --colour=auto as "$@"
-  }
-
-  function diff() {
-    command grc --colour=auto diff --color "$@"
   }
 
   if (( $+commands[dig] )); then
