@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # Standarized $0 handling, following:
 # https://github.com/zdharma/Zsh-100-Commits-Club/blob/master/Zsh-Plugin-Standard.adoc
-0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
+0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
 0="${${(M)0:#/*}:-$PWD/$0}"
 
 if [[ $PMSPEC != *b* ]] {
@@ -33,7 +33,7 @@ if (( $+commands[diff-so-fancy] )); then
   function diff() {
     command diff "$@" | diff-so-fancy
   }
-elif  (( $+commands[delta] )); then
+elif (( $+commands[delta] )); then
   function diff() {
     command diff "$@" | delta
   }
@@ -87,7 +87,7 @@ if (( $+commands[grc] )); then
   fi
 
   if (( $+commands[g++] )); then
-    function g() ++(){
+    function "g++"(){
       command grc --colour=auto g++ "$@"
     }
   fi
@@ -151,4 +151,16 @@ if (( $+commands[grc] )); then
       command grc --colour=auto traceroute "$@"
     }
   fi
+else
+  function df() {
+    df -h "$@"
+  }
+
+  function du() {
+    du -h "$@"
+  }
+
+  function free() {
+    free -h "$@"
+  }
 fi
