@@ -153,14 +153,14 @@ if (( $+commands[grc] )); then
   fi
 else
   function df() {
-    df -h "$@"
+    command df -h "$@"
   }
 
   function du() {
-    du -h "$@"
+    command du -h "$@"
   }
 
   function free() {
-    free -h "$@"
+    command free -h "$@"
   }
 fi
