@@ -29,19 +29,9 @@ function fgrep() {
   command fgrep --colour=auto "$@"
 }
 
-if (( $+commands[diff-so-fancy] )); then
-  function diff() {
-    command diff "$@" | diff-so-fancy
-  }
-elif (( $+commands[delta] )); then
-  function diff() {
-    command diff "$@" | delta
-  }
-else
-  function diff() {
-    command diff --color "$@"
-  }
-fi
+function diff() {
+  command diff --color "$@"
+}
 
 if (( $+commands[grc] )); then
   function env() {
