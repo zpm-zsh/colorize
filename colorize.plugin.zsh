@@ -13,6 +13,10 @@ DEPENDENCES_DEBIAN+=( grc )
 
 export LESS="$LESS -R -M"
 
+function ls() {
+  command ls --color=auto "$@"
+}
+
 function ip() {
   command ip -color "$@"
 }
