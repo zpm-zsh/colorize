@@ -72,9 +72,17 @@ function fgrep() {
   command fgrep --colour=auto "$@"
 }
 
-function diff() {
-  command diff --color=auto "$@"
-}
+if [[ $(uname) == "Darwin" ]]; then
+  if (( $+commands[grc] )); then
+    function diff() {
+      command grc --colour=auto diff "$@"
+    }
+  fi
+else
+  function diff() {
+    command diff --color=auto "$@"
+  }
+fi
 
 if (( $+commands[grc] )); then
   for name in env lsblk as dig gas gcc g++ last ld ifconfig mount mtr netstat ss ping ping6 ps traceroute lsmod lspci; do
