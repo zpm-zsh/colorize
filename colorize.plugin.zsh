@@ -12,7 +12,7 @@ if [[ $PMSPEC != *b* ]] {
 DEPENDENCES_ARCH+=( grc )
 DEPENDENCES_DEBIAN+=( grc )
 
-export LESS="$LESS -R -M"
+LESS="-r -M $LESS"
 
 function ip() {
   command ip -color "$@"
