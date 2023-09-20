@@ -55,7 +55,9 @@ function ag() {
 }
 
 function ip() {
-  command ip -color "$@"
+  local opt
+  [[ -t 1 ]] && opt=-color
+  command ip $opt "$@"
 }
 
 function grep() {
@@ -71,7 +73,7 @@ function fgrep() {
 }
 
 function diff() {
-  command diff --color "$@"
+  command diff --color=auto "$@"
 }
 
 if (( $+commands[grc] )); then
