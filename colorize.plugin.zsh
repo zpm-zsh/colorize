@@ -77,7 +77,7 @@ function diff() {
 }
 
 if (( $+commands[grc] )); then
-  for name in env lsblk as dig gas gcc g++ last ld ifconfig mount mtr netstat ping ping6 ps traceroute lsmod lspci; do
+  for name in env lsblk as dig gas gcc g++ last ld ifconfig mount mtr netstat ss ping ping6 ps traceroute lsmod lspci; do
     if (( $+commands[$name] )); then
       function $name() {
         command grc --colour=auto $0 "$@"
