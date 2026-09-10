@@ -2,6 +2,7 @@
 
 DEPENDENCES_ARCH+=( grc )
 DEPENDENCES_DEBIAN+=( grc )
+DEPENDENCES_BREW+=( grc )
 
 # Zsh colors
 if [[ "$CLICOLOR" != '0' ]]; then
@@ -23,7 +24,7 @@ export GCC_COLORS
 export LESS="-r -M $LESS"
 
 export LESS_TERMCAP_mb="${c[green]}" # start blink
-export LESS_TERMCAP_md="${c[bold]}${c[springgreen]}${c[coursive]}" # start bold
+export LESS_TERMCAP_md="${c[bold]}${c[springgreen]}${c[italic]:-${c[coursive]}}" # start bold
 export LESS_TERMCAP_so="${c[bold]}${c[bg_yellow]}${c[black]}" # start standout
 export LESS_TERMCAP_us="${c[underline]}${c[azure]}" # start underline
 
@@ -51,71 +52,35 @@ function ag() {
     --color-path "${c[raw_bg_black]};${c[raw_bold]};${c[raw_magenta]}"      \
     --color-match "${c[raw_bg_red]};${c[raw_bold]};${c[raw_black]}"         \
     --color-line-number "${c[raw_bg_black]};${c[raw_bold]};${c[raw_green]}" \
-    $@
+    "$@"
 }
 
-function ip() {
-  local opt
-  [[ -t 1 ]] && opt=-color
-  command ip $opt "$@"
-}
-
-function grep() {
-  command grep --colour=auto "$@"
-}
-
-function egrep() {
-  command egrep --colour=auto "$@"
-}
-
-function fgrep() {
-  command fgrep --colour=auto "$@"
-}
+alias ip="ip -color"
+alias grep="grep --colour=auto"
+alias egrep="egrep --colour=auto"
+alias fgrep="fgrep --colour=auto"
 
 if [[ $(uname) == "Darwin" ]]; then
   if (( $+commands[grc] )); then
-    function diff() {
-      command grc --colour=auto diff "$@"
-    }
+    alias diff="grc --colour=auto diff"
   fi
 else
-  function diff() {
-    command diff --color=auto "$@"
-  }
+  alias diff="diff --color=auto"
 fi
 
 if (( $+commands[grc] )); then
   for name in env lsblk as dig gas gcc g++ last ld ifconfig mount mtr netstat ss ping ping6 ps traceroute lsmod lspci; do
     if (( $+commands[$name] )); then
-      function $name() {
-        command grc --colour=auto $0 "$@"
-      }
+      alias $name="grc --colour=auto $name"
     fi
   done
   unset name
 
-  function df() {
-    command grc --colour=auto df -h "$@"
-  }
-
-  function du() {
-    command grc --colour=auto du -h "$@"
-  }
-
-  function free() {
-    command grc --colour=auto free -h "$@"
-  }
-
+  alias df="grc --colour=auto df -h"
+  alias du="grc --colour=auto du -h"
+  alias free="grc --colour=auto free -h"
 else
-  function df() {
-    command df -h "$@"
-  }
-
-  function du() {
-    command du -h "$@"
-  }
-
-  function free() {
-    command free -h "$@"
-  }
+  alias df="df -h"
+  alias du="du -h"
+  alias free="free -h"
 fi
